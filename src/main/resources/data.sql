@@ -6,6 +6,8 @@ CREATE TABLE employees (
 );
 
 INSERT INTO employees (name) VALUES
-  ('Aliko'),
+  ('Donald'),
   ('Bill'),
-  ('Folrunsho');
+  ('Victor'),
+  ('Antonio'),
+  ('Chuck');
