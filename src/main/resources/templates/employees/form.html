@@ -25,7 +25,13 @@
 			<input type="hidden" th:field="*{id}" />
 			
 			<input type="text" th:field="*{name}"
-					class="form-control mb-4 col-4" placeholder="First name">
+					class="form-control mb-4 col-4" placeholder="NAME">
+
+			<input type="text" th:field="*{surname}"
+				   class="form-control mb-4 col-4" placeholder="SURNAME">
+
+			<input type="text" th:field="*{age}"
+				   class="form-control mb-4 col-4" placeholder="AGE">
 
 			<button type="submit" class="btn btn-info col-2">Save</button>
 						

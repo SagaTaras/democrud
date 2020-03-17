@@ -26,7 +26,10 @@
 	<table class="table table-bordered table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th>name</th>
+				<th>NAME</th>
+				<th>SURNAME</th>
+				<th>AGE</th>
+				<th>ACTION</th>
 			</tr>
 		</thead>
 		
@@ -34,6 +37,8 @@
 			<tr th:each="tempEmployee : ${employees}">
 			
 				<td th:text="${tempEmployee.name}" />
+				<td th:text="${tempEmployee.surname}" />
+				<td th:text="${tempEmployee.age}" />
 
 				<td>
 				<div class="row">
