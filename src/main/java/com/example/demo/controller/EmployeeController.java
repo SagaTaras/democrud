@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.domain.Employee;
 import com.example.demo.service.EmployeeService;
+import com.example.demo.utils.UrlModifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,11 @@ import java.util.List;
 public class EmployeeController {
 
     private EmployeeService employeeService;
+    private UrlModifier urlModifier;
 
-    public EmployeeController(EmployeeService theEmployeeService) {
-        employeeService = theEmployeeService;
+    public EmployeeController(EmployeeService employeeService, UrlModifier urlModifier) {
+        this.employeeService = employeeService;
+        this.urlModifier = urlModifier;
     }
 
     @GetMapping("/list")
@@ -29,7 +32,7 @@ public class EmployeeController {
     public String showFormForAdd(Model theModel) {
         Employee employee = new Employee();
         theModel.addAttribute("employee", employee);
-        return "employees/form";
+        return "/employees/form";
     }
 
     @PostMapping("/save")
