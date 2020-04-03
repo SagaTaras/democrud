@@ -25,20 +25,20 @@ public class EmployeeController {
     public String listEmployees(Model theModel) {
         List<Employee> employees = employeeService.findAll();
         theModel.addAttribute("employees", employees);
-        return "/employees/list";
+        return "employees/list";
     }
 
     @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model theModel) {
         Employee employee = new Employee();
         theModel.addAttribute("employee", employee);
-        return "/employees/form";
+        return "employees/form";
     }
 
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.save(employee);
-        return "redirect:/employees/list";
+        return "redirect:employees/list";
     }
 
     @PostMapping("/showFormForUpdate")
@@ -51,7 +51,7 @@ public class EmployeeController {
     @PostMapping("/delete")
     public String delete(@RequestParam("employeeId") int id) {
         employeeService.deleteById(id);
-        return "redirect:/employees/list";
+        return "redirect:employees/list";
 
     }
 }
