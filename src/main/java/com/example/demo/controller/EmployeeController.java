@@ -38,7 +38,7 @@ public class EmployeeController {
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.save(employee);
-        return "redirect:employees/list";
+        return "redirect:list";
     }
 
     @PostMapping("/showFormForUpdate")
@@ -51,7 +51,7 @@ public class EmployeeController {
     @PostMapping("/delete")
     public String delete(@RequestParam("employeeId") int id) {
         employeeService.deleteById(id);
-        return "redirect:employees/list";
+        return "redirect:list";
 
     }
 }

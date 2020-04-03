@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/setup")
@@ -17,14 +18,16 @@ public class SetupController {
     }
 
     @GetMapping("/setSuffixForMariaDB")
-    public String setSuffixForMariaDB(Model theModel) {
+    public ModelAndView setSuffixForMariaDB(Model theModel) {
         urlModifier.setSuffixForMariaDB();
-        return "redirect:/employees/list";
+        ModelAndView mv = new ModelAndView("redirect:/employees/list");
+        return mv;
     }
 
     @GetMapping("/setSuffixForPostgres")
-    public String setSuffixForPostgres(Model theModel) {
+    public ModelAndView setSuffixForPostgres(Model theModel) {
         urlModifier.setSuffixForPostgres();
-        return "redirect:/employees/list";
+        ModelAndView mv = new ModelAndView("redirect:/employees/list");
+        return mv;
     }
 }
