@@ -17,13 +17,13 @@ public class DataSourceConfig {
 
         DriverManagerDataSource mariadbDS = new DriverManagerDataSource();
         mariadbDS.setDriverClassName("org.mariadb.jdbc.Driver");
-        mariadbDS.setUrl("jdbc:mariadb://localhost:3306/springboot_mariadb");
+        mariadbDS.setUrl("jdbc:mariadb://web-mariadb:3306/springboot_mariadb?createDatabaseIfNotExist=true");
         mariadbDS.setUsername("root");
         mariadbDS.setPassword("password");
 
         DriverManagerDataSource postgresDS = new DriverManagerDataSource();
 //        postgresDS.setDriverClassName("org.postgresql.Driver");
-        postgresDS.setUrl("jdbc:postgresql://localhost:5432/postgres");
+        postgresDS.setUrl("jdbc:postgresql://web-pgdb:5432/postgres?createDatabaseIfNotExist=true");
         postgresDS.setUsername("postgres");
         postgresDS.setPassword("password");
 
